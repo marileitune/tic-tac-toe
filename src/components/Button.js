@@ -1,6 +1,6 @@
 import React from 'react';
 
- const Circle = () => {
+ const Turn = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ import React from 'react';
     )
 };
 
-export default Circle;
+export default Turn;
