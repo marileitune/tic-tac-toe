@@ -1,11 +1,11 @@
 import React from 'react';
 
- const Turn = () => {
+ const Button = ({message}) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <button>{message}</button>
+        </>
     )
 };
 
-export default Turn;
+export default Button;

@@ -1,10 +1,10 @@
 import React from 'react';
 
- const Square = () => {
+ const Square = ({ value, onClick }) => {//here I'm destructuring the props in the parameter
     return (
-        <div>
-            
-        </div>
+        <>
+            <button style={{width: '50px', height: '50px'}} onClick={() => onClick(value)}>{value}</button>
+        </>
     )
 };
 

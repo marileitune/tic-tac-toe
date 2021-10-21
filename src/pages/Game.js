@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Turn from '../components/Turn';
+import Board from '../components/Board';
 
  const Game = () => {
 
@@ -9,18 +11,21 @@ import React from 'react';
         player2: []
       });
 
-    const [turn, setTurn] = useState('');
+    const [turn, setTurn] = useState('Player One');
 
     const [winner, setWinner] = useState('');
 
     // -------- FUNCTIONS --------
 
-    const playGame = () => {
-        // add a number in the array of 1 of the states (playerOne or playerTwo)
+    const playGame = (value) => {
+        // add a number in the array of 1 of the states (player1 or player2) and call the function checkTurn.
+        let { player1, player2 } = state;
+        turn === 'Player One' ? player1.push(value) : player2.push(value);
+        checkTurn();
     };
 
     const checkTurn = () => {
-        // change the turn state depending on who it's turn to play.
+        turn === 'Player One' ? setTurn('Player Two') : setTurn('Player One')
     };
 
     const checkGameOver = () => {
@@ -40,14 +45,20 @@ import React from 'react';
     };
 
     const restartGame = () => {
-        // set all the states to the initial form.
+        let { player1, player2 } = state;
+        player1 = []
+        player2 = []
+        setTurn('Player One');
+        setWinner('');
     };
+
 
     // -------- RETURN --------
 
     return (
         <>
-            
+            <Turn turn={turn}/>
+            <Board onClick={playGame}/>
         </>
     )
 };
