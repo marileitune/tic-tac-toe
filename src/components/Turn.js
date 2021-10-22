@@ -1,7 +1,6 @@
 import React from 'react';
 
- const Turn = (props) => {
-     const {turn} = props
+ const Turn = ({turn}) => {
     return (
         <>
             <h2>{turn}'s turn:</h2>
