@@ -9,7 +9,7 @@ import Button from '../components/Button';
     // -------- STATES --------
 
     const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
-
+    
     const [player1, setPlayer1] = useState([]);
 
     const [player2, setPlayer2] = useState([])
@@ -19,8 +19,6 @@ import Button from '../components/Button';
     const [winner, setWinner] = useState('');
 
     const [rounds, setRounds] = useState(0);
-
-    const [fill, setFill] = useState([]);
 
 
     // -------- FUNCTIONS --------
@@ -36,8 +34,17 @@ import Button from '../components/Button';
             turn === 'Player One' ? (setPlayer1([...player1, value])) : (setPlayer2([...player2, value]));
             setRounds(rounds+1);
             checkTurn();
-            setFill([...fill, value]);
+            setBoard(
+                board.map((square, i) => {
+                  if (i === value && square === "") {
+                    return turn;
+                  }
+                  return square;
+                })
+              );
         }
+
+        console.log(board)
     };
 
     const checkTurn = () => {
@@ -83,7 +90,7 @@ import Button from '../components/Button';
         setTurn('Player One');
         setWinner('');
         setRounds(0);
-        setFill([])
+        setBoard(["", "", "", "", "", "", "", "", ""])
     };
 
 
@@ -95,7 +102,7 @@ import Button from '../components/Button';
                 <div>
                     <Turn turn={turn}/>
                     <Button message={"refresh"} restartGame={restartGame}/>
-                    <Board onClick={playGame} turn={turn} fill={fill}/> 
+                    <Board onClick={playGame} board={board}/> 
                 </div> 
             : 
                 <Notification winner={winner} restartGame={restartGame}/>}

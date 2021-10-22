@@ -1,11 +1,11 @@
 import React from 'react';
 import Player from './Player';
 
- const Square = ({ value, turn, fill, onClick }) => {
+ const Square = ({ value, onClick }) => {
     return (
         <>
             <button style={{width: '50px', height: '50px'}} onClick={() => onClick(value)}>
-                {fill.includes(value) && <Player turn={turn}/>}
+                { value !== "" ? value ==='Player One' ? <Player player={'Player One'}/> : <Player player={'Player Two'}/> : ""}
             </button>
         </>
     )
