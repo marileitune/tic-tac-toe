@@ -3,7 +3,7 @@ import React from 'react';
  const Result = ({winner}) => {
     return (
         <>
-            <h3>{winner} won</h3>
+            { !winner === "Draw" ? <h3>{winner} won</h3> : <h3>{winner}</h3>}    
         </>
     )
 };

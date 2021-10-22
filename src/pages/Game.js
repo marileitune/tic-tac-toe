@@ -7,31 +7,27 @@ import Notification from './Notification';
 
     // -------- STATES --------
 
-    const [state, setState] = useState({
-        player1: [],
-        player2: []
-      });
+    const [player1, setPlayer1] = useState([]);
+
+    const [player2, setPlayer2] = useState([])
 
     const [turn, setTurn] = useState('Player One');
 
     const [winner, setWinner] = useState('');
 
-    useEffect(() => {console.log(winner)})//this is because setWinner is async
-
-    const [rounds, setRounds] = useState(0);
+    const [rounds, setRounds] = useState(1);
 
     // -------- FUNCTIONS --------
 
     const playGame = (value) => {
         // add a number in the array of 1 of the states (player1 or player2) and call the function checkTurn.
-        let { player1, player2 } = state;
 
         if(!player1.includes(value) && !player2.includes(value)) {
-            turn === 'Player One' ? player1.push(value) : player2.push(value);
-            setRounds(rounds+1)
+            turn === 'Player One' ? (setPlayer1([...player1, value])) : (setPlayer2([...player2, value]));
+            setRounds(rounds+1);
             checkGameOver();
         }
-
+        console.log(player1, player2)
     };
 
     const checkTurn = () => {
@@ -53,8 +49,6 @@ import Notification from './Notification';
         IF YES: check who won, pass it for the state called "winner", show one of the notifications and call the function restartGame() .
         */
 
-        let { player1, player2 } = state;
-
         const winCases = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
 
         winCases.forEach((winCase) => {
@@ -74,11 +68,11 @@ import Notification from './Notification';
     }
 
     const restartGame = () => {
-        let { player1, player2 } = state;
-        player1 = []
-        player2 = []
+        setPlayer1([]);
+        setPlayer2([]);
         setTurn('Player One');
         setWinner('');
+        setRounds(1)
     };
 
 
@@ -89,7 +83,7 @@ import Notification from './Notification';
             {!winner ?
                 <div>
                     <Turn turn={turn}/>
-                    <Board onClick={playGame}/> 
+                    <Board onClick={playGame} player={turn}/> 
                 </div> 
             : 
                 <Notification winner={winner} restartGame={restartGame}/>}
