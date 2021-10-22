@@ -2,11 +2,11 @@ import React from 'react';
 import Result from '../components/Result';
 import Button from '../components/Button';
 
- const Notification = () => {
+ const Notification = ({winner, restartGame}) => {
     return (
         <>
-            <Result />
-            <Button message={"restart"}/>
+            <Result winner={winner}/>
+            <Button message={"restart"} restartGame={restartGame}/>
         </>
     )
 };

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Turn from '../components/Turn';
 import Board from '../components/Board';
 import Notification from './Notification';
@@ -15,6 +15,8 @@ import Notification from './Notification';
     const [turn, setTurn] = useState('Player One');
 
     const [winner, setWinner] = useState('');
+
+    useEffect(() => {console.log(winner)})//this is because setWinner is async
 
     const [rounds, setRounds] = useState(0);
 
@@ -57,22 +59,18 @@ import Notification from './Notification';
 
         winCases.forEach((winCase) => {
             switch (true) {
-                case player1.sort().includes(winCase.sort()):        
-                    setWinner("Player 1");
+                case winCase.every(elem => player1.includes(elem)):        
+                    setWinner("Player 1")
                     break;
-                case player2.sort().includes(winCase.sort()):
+                case winCase.every(elem => player2.includes(elem)):
                     setWinner("Player 2");
                     break;
                 case rounds === 9:
                     setWinner("Draw")
                     break; 
                 default: checkTurn() 
-            } 
-            console.log("player1: " + player1, "player2: " + player2, "winCase: " + winCase)   
-        })
-    
-        console.log("winner: " + winner)
-        
+            }           
+        })    
     }
 
     const restartGame = () => {
@@ -88,8 +86,13 @@ import Notification from './Notification';
 
     return (
         <>
-            <Turn turn={turn}/>
-            {!winner ? <Board onClick={playGame}/> : <Notification winner={winner} restart={restartGame}/>}
+            {!winner ?
+                <div>
+                    <Turn turn={turn}/>
+                    <Board onClick={playGame}/> 
+                </div> 
+            : 
+                <Notification winner={winner} restartGame={restartGame}/>}
         </>
     )
 };

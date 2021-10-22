@@ -1,9 +1,9 @@
 import React from 'react';
 
- const Button = ({message}) => {
+ const Button = ({message, restartGame}) => {
     return (
         <>
-            <button>{message}</button>
+            <button onClick={restartGame}>{message}</button>
         </>
     )
 };
