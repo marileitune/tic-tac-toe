@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../utils/colors';
 import Player from './Player';
 
  const Square = ({ value, onClick }) => {
@@ -10,12 +11,11 @@ import Player from './Player';
 };
 
 const style = {
-	background: "lightblue",
-	border: "2px solid darkblue",
-	fontSize: "30px",
-	fontWeight: "800",
+    backgroundColor: 'transparent',
+	border: "6px solid",
+    outline: 'none',
+    borderColor: colors.darkBlue,
 	cursor: "pointer",
-	outline: "none",
 };
 
 

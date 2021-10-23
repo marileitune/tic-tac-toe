@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../utils/colors';
 import Square from './Square';
 
  const Board = ({onClick, board}) => {
@@ -17,10 +18,10 @@ import Square from './Square';
 };
 
 const style = {
-	border: "4px solid darkblue",
-	borderRadius: "10px",
-	width: "250px",
-	height: "250px",
+	border: "4px solid",
+    borderColor: colors.darkBlue,
+    width: '40vw',
+    height: '40vw',
 	margin: "0 auto",
 	display: "grid",
 	gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
