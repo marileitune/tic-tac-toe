@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# TIC TAC TOE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Game built using React.js.
 
-## Available Scripts
+## Logic:
 
-In the project directory, you can run:
+Board has 9 squares:
+- 0 1 2
+- 3 4 5
+- 6 7 8
 
-### `yarn start`
+Any player wins if completes:
+- 0 1 2
+- 3 4 5
+- 6 7 8
+- 0 4 8
+- 2 4 6
+- 0 3 6
+- 1 4 7
+- 2 5 8
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The game ends if one player wins or if after 9 rounds nobody wins. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Structure:
 
-### `yarn test`
+There are 5 components and 2 pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![alt text](https://res.cloudinary.com/dplgnsjzm/image/upload/v1635017297/tic-tac-toe/Captura_de_Tela_2021-10-23_a%CC%80s_16.27.36_oijmzt.png)
 
-### `yarn build`
+### Pages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Game** - where it is shown whose turn it is to play (the color changes depending on whether it is player 1 or player 2), the board and a reset button. As a component, it's where are stored all the functions and states.
+- **Notification** - where it is shown who won the game or if there was a draw and a button to restart the game.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Components:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Turn** - shows who should play.
+- **Board** - consists of 9 squares.
+- **Square** - it's the button where the player clicks to choose a spot. 
+- **Button** - it's used twice: to reset the game and to restart the game. The name of the button is passed as a props.  
+- **Result** - shows who won the game or if there was a draw.
 
-### `yarn eject`
+### Utils:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Colors** - where are stored all the colors used in the game.
+- **Sizes** - where are stored the font sizes and the box sizes (padding and margin).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Links
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Wireframe:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Figma Link](https://www.figma.com/file/igw4PHoB0LekhvsSufQXe4/Tic-Tac-Toe?node-id=0%3A1)
 
-## Learn More
+### Trello:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Board Link](https://trello.com/b/5kVi6nud/tic-tac-toe)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Git:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Repository Link](https://github.com/marileitune/tic-tac-toe)

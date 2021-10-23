@@ -10,12 +10,12 @@ import { sizes } from '../utils/sizes';
                 {
                     winner === 'Player One' ? 
                     <>
-                        <h3 style={style.textBlack}>{winner} won</h3>
+                        <h3 style={style.textBlack}>{winner} wins</h3>
                         <img style={style.image} src='https://res.cloudinary.com/dplgnsjzm/image/upload/v1634905132/tic-tac-toe/XPlayer_caqey7.svg' alt="x"/>  
                     </>
                     : 
                     <>
-                        <h3 style={style.textWhite}>{winner} won</h3>
+                        <h3 style={style.textWhite}>{winner} wins</h3>
                         <img style={style.image} src='https://res.cloudinary.com/dplgnsjzm/image/upload/v1634905132/tic-tac-toe/OPlayer_tk589h.svg' alt="o"/>
                     </>
                 } 

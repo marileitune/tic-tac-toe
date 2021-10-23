@@ -102,7 +102,7 @@ import Button from '../components/Button';
             {!winner ?
                 <>
                     <Turn turn={turn}/>
-                    <Button message={'refresh'} restartGame={restartGame}/>
+                    <Button message={'reset'} restartGame={restartGame}/>
                     <Board onClick={playGame} board={board}/> 
                 </> 
             : 
