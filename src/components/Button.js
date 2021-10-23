@@ -24,5 +24,6 @@ const style = {
     marginBottom: sizes.boxSizes.md,
     cursor: "pointer",
     color: colors.white,
+    minWidth: '150px'
 }
 export default Button;

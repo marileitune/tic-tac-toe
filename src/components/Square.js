@@ -13,9 +13,9 @@ import Player from './Player';
 const style = {
     backgroundColor: 'transparent',
 	border: "6px solid",
-    outline: 'none',
     borderColor: colors.darkBlue,
 	cursor: "pointer",
+    padding: 0
 };
 
 

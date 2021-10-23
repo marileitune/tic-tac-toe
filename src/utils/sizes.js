@@ -1,7 +1,7 @@
 export const sizes = {
   fontSizes:  {
-    h3: 'calc(4vw)',
-    button: 'calc(3vw)'
+    h3: 'calc(3vw + 20px)',
+    button: 'calc(2vw + 10px)'
   },
   boxSizes: {
     sm: '10px',
