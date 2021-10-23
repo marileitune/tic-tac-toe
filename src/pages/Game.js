@@ -4,6 +4,8 @@ import Board from '../components/Board';
 import Notification from './Notification';
 import Button from '../components/Button';
 
+import App from '../App.css';
+
  const Game = () => {
 
     // -------- STATES --------
@@ -99,11 +101,11 @@ import Button from '../components/Button';
     return (
         <>
             {!winner ?
-                <div>
+                <>
                     <Turn turn={turn}/>
                     <Button message={"refresh"} restartGame={restartGame}/>
                     <Board onClick={playGame} board={board}/> 
-                </div> 
+                </> 
             : 
                 <Notification winner={winner} restartGame={restartGame}/>}
         </>

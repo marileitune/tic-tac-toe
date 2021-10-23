@@ -3,7 +3,7 @@ import React from 'react';
  const Button = ({message, restartGame}) => {
     return (
         <>
-            <button onClick={restartGame}>{message}</button>
+            <button className="br2" onClick={restartGame}>{message}</button>
         </>
     )
 };

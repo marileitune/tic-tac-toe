@@ -3,33 +3,21 @@ import Player from './Player';
 
  const Square = ({ value, onClick }) => {
     return (
-        <div style={squareStyle.box}>
-            <button style={squareStyle.button} onClick={() => onClick(value)}>
+            <button style={style} onClick={() => onClick(value)}>
                 { value !== "" ? value ==='Player One' ? <Player player={'Player One'}/> : <Player player={'Player Two'}/> : ""}
             </button>
-        </div>
     )
 };
 
-const squareStyle = {
-    box: {
-        width: "30%",
-        height: "100px",
-        background: "gray",
-        float: "left",
-        margin: "5px",
-        color: "white",
-        verticalAlign: "middle",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    button: {
-        background:  "gray",
-        width: '100px',
-        height: '100px'
-    }
-    
-  };
+const style = {
+	background: "lightblue",
+	border: "2px solid darkblue",
+	fontSize: "30px",
+	fontWeight: "800",
+	cursor: "pointer",
+	outline: "none",
+};
+
+
 
 export default Square;
