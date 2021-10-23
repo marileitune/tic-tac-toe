@@ -1,5 +1,6 @@
 import React from 'react';
 import { colors } from '../utils/colors';
+import { sizes } from '../utils/sizes';
 
  const Result = ({winner}) => {
     return (
@@ -30,21 +31,23 @@ import { colors } from '../utils/colors';
 
 const style = {
     text: {
-        fontSize: 'calc(1em + 3vw)',
+        fontSize: sizes.fontSizes.h3,
         margin: 0,
     },
     textBlack: {
-        fontSize: 'calc(1em + 3vw)',
+        fontSize: sizes.fontSizes.h3,
         margin: 0,
         color: colors.black
     },
     textWhite: {
-        fontSize: 'calc(1em + 3vw)',
+        fontSize: sizes.fontSizes.h3,
         margin: 0,
         color: colors.white
     },
     image: {
         width: '20%',
+        marginTop: sizes.boxSizes.xl,
+        marginBottom: sizes.boxSizes.xl,
     }
 
 }

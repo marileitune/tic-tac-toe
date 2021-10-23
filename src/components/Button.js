@@ -1,5 +1,6 @@
 import React from 'react';
 import { colors } from '../utils/colors';
+import { sizes } from '../utils/sizes';
 
  const Button = ({message, restartGame}) => {
     return (
@@ -13,12 +14,15 @@ const style = {
     backgroundColor: colors.darkBlue,
     border: 'none',
     fontFamily: 'Montserrat',
+    fontSize: sizes.fontSizes.button,
     letterSpacing: '0.0625em',
-    padding: '10px',
-    width: '10%',
-    minWidth: '70px',
+    paddingRight: sizes.boxSizes.md, 
+    paddingLeft: sizes.boxSizes.md,
+    paddingTop: sizes.boxSizes.sm,  
+    paddingBottom: sizes.boxSizes.sm,  
+    marginTop: sizes.boxSizes.md,
+    marginBottom: sizes.boxSizes.md,
     cursor: "pointer",
     color: colors.white,
-    margin: 0
 }
 export default Button;

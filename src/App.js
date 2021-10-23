@@ -1,4 +1,3 @@
-import './App.css';
 import Game from './pages/Game';
 import {colors} from './utils/colors'
 

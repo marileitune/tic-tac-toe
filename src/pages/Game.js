@@ -4,7 +4,6 @@ import Board from '../components/Board';
 import Notification from './Notification';
 import Button from '../components/Button';
 
-import App from '../App.css';
 
  const Game = () => {
 
@@ -55,7 +54,7 @@ import App from '../App.css';
 
     const checkGameOver = () => {
         /* 
-         from the third round, check if all squares have been filled or check if any player has one of the following sequences in the array:
+         check if all squares have been filled or check if any player has one of the following sequences in the array:
             -- 0 1 2
             -- 3 4 5
             -- 6 7 8
@@ -92,7 +91,7 @@ import App from '../App.css';
         setTurn('Player One');
         setWinner('');
         setRounds(0);
-        setBoard(["", "", "", "", "", "", "", "", ""])
+        setBoard(['', '', '', '', '', '', '', '', ''])
     };
 
 
@@ -103,7 +102,7 @@ import App from '../App.css';
             {!winner ?
                 <>
                     <Turn turn={turn}/>
-                    <Button message={"refresh"} restartGame={restartGame}/>
+                    <Button message={'refresh'} restartGame={restartGame}/>
                     <Board onClick={playGame} board={board}/> 
                 </> 
             : 
