@@ -33,6 +33,7 @@ const style = {
     text: {
         fontSize: sizes.fontSizes.h3,
         margin: 0,
+        color: colors.gray
     },
     textBlack: {
         fontSize: sizes.fontSizes.h3,
