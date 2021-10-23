@@ -8,7 +8,6 @@ import { sizes } from '../utils/sizes';
         {
             turn === 'Player One' ? <h3 style={style.black}>Next: {turn}</h3> : <h3 style={style.white}>Next: {turn}</h3>
         }
-            
         </>
     )
 };

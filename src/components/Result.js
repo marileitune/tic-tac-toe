@@ -23,6 +23,7 @@ import { sizes } from '../utils/sizes';
             : 
             <>
                 <h3 style={style.text}>{winner}</h3>
+                <img style={style.image} src='https://res.cloudinary.com/dplgnsjzm/image/upload/v1635012075/tic-tac-toe/draw_obgozc.svg' alt="draw image"/>
             </> 
             }   
         </>
